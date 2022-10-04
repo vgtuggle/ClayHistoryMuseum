@@ -11,4 +11,7 @@ This repository was created to develop an application for the Clay County Kansas
 
 
 Supplemental information:
-Public Land Survey System - https://geokansas.ku.edu/public-land-survey-system
+Overview of Public Land Survey System - https://geokansas.ku.edu/public-land-survey-system
+
+What's Next? 
+Is it possible to access existing GIS (Geographic Information System) data to build our application? How can we find out?
