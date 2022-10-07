@@ -15,3 +15,6 @@ Overview of Public Land Survey System - https://geokansas.ku.edu/public-land-sur
 
 What's Next? 
 Is it possible to access existing GIS (Geographic Information System) data to build our application? How can we find out?
+
+Img mapping website - highlight hover
+https://nestcode.co/en/blog/create-an-interactive-image-map-and-highlight-on-areas-when-mouseover
