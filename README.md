@@ -18,3 +18,7 @@ Is it possible to access existing GIS (Geographic Information System) data to bu
 
 Img mapping website - highlight hover
 https://nestcode.co/en/blog/create-an-interactive-image-map-and-highlight-on-areas-when-mouseover
+
+
+Draw image on Canvas
+https://www.freecodecamp.org/news/how-displaying-an-image-on-html5-canvas-works-13e3f6a6c4bd/
