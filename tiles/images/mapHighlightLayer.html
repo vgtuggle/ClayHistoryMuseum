@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+    <title>canvas layer example</title>
+</head>
+<body>
+    <div id="div1">
+        <label>Select a Township</label>
+        <select name="townshipID" id="townshipID">
+            <option value="0">T-6-S R-1-E</option>
+            <option value="1">T-7-S R-1-E</option>
+            <option value="2">T-8-S R-1-E</option>
+            <option value="3">T-9-S R-1-E</option>
+            <option value="4">T-10-S R-1-E</option>
+            <option value="5">T-6-S R-2-E</option>
+            <option value="6">T-7-S R-2-E</option>
+            <option value="7">T-8-S R-2-E</option>
+            <option value="8">T-9-S R-2-E</option>
+            <option value="9">T-10-S R-2-E</option>
+            <option value="10">T-6-S R-3-E</option>
+            <option value="11">T-7-S R-3-E</option>
+            <option value="12">T-8-S R-3-E</option>
+            <option value="13">T-9-S R-3-E</option>
+            <option value="14">T-10-S R-3-E</option>
+            <option value="15">T-6-S R-4-E</option>
+            <option value="16">T-7-S R-4-E</option>
+            <option value="17">T-8-S R-5-E</option>
+            <option value="18">T-9-S R-6-E</option>
+            <option value="19">T-10-S R-7-E</option>
+
+        </select>
+        <button id="btn">Highlight Township</button>
+    </div>
+    
+    <div style="position:absolute;left:50px;top:50px;">
+        <canvas id="canvas_back" width="951" height="1280" style="position:absolute;"></canvas>
+        <canvas id="canvas_front" width="951" height="1280" style="position:absolute;"></canvas>
+    </div>
+<script>
+    const btn = document.getElementById("btn");
+    const sel = document.getElementById("townshipID");   
+    let tIndex = 4; // index of township from select for array
+    let highlight_x = 0;
+    let highlight_y = 0;
+
+    btn.onclick = (event) => {
+        event.preventDefault();
+
+        tIndex = sel.selectedIndex;
+        highlight_x = townshipCoords[tIndex][2];  // pulls x & y coordinates from township array
+        highlight_y = townshipCoords[tIndex][3]   // using select index
+
+        highlightTownship();
+    };
+
+    const townshipCoords = [
+    //  these array data values are for: range, twsp, x, y, width, height 
+    //  
+    //  note: the x, y, width & height 
+    //  are pixel values on the Clay County Township Map "ccmap.png"
+
+    //  Only the first two Range values are provided, we'll
+    //  need to get the values of Ranges 3 & 4. 
+
+    [1, 6, 57, 123, 222, 222],
+    [1,	7, 57, 343, 222, 222],
+    [1, 8, 55, 564, 222, 222],
+    [1, 9, 53, 785, 222, 222],
+    [1, 10, 51, 1005, 222, 222],
+    [2,	6, 276, 123, 222, 222],    
+    [2,	7, 274, 341, 222, 222],
+    [2,	8, 273, 564, 222, 222],
+    [2,	9, 272, 785, 222, 222],
+    [2,	10, 271, 1006, 222, 222],
+    [3, 6, 497, 123, 222, 222],
+    [3, 7, 495, 345, 222, 222],
+    [3, 8, 494, 567, 222, 222],
+    [3, 9, 493, 778, 222, 222],
+    [3, 10, 491, 1000, 222, 222],
+    [4, 6, 719, 123, 222, 222],
+    [4, 7, 717, 345, 222, 222],
+    [4, 8, 716, 568, 222, 222],
+    [4, 9, 715, 790, 222, 222],
+    [4, 10, 714, 1012, 222, 222]
+
+    ]
+        //let highlight_x = townshipCoords[5][2];  // hardcoded to pull x
+        //let highlight_y = townshipCoords[5][3]   // and y from the townshipCoords
+        
+        let canvas_back = document.getElementById('canvas_back');
+        let canvas_front = document.getElementById('canvas_front');
+        let ctx_back = canvas_back.getContext('2d');
+        let ctx_front = canvas_front.getContext('2d');
+
+        const img = new Image();
+        img.src = "ccmap.png"       //Clay County Township Map
+
+        img.onload = function(){          
+            ctx_back.drawImage(img,0,0);  
+        };
+
+    function highlightTownship(){    
+        ctx_front.fillStyle = 'rgba(225, 225, 0, 0.25)'; // yellow 30% alpha
+        ctx_front.fillRect(highlight_x, highlight_y, 222, 222); // coordinates for all townships are found in findTownship02.js file
+    }
+
+</script>
+</body>
+</html>
