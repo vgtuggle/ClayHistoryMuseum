@@ -1,4 +1,5 @@
-// drawing county map image on canvas
+// draws county map image on canvas
+// shows only selected township
 // reference: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 
 const btn = document.getElementById("btn");
@@ -28,9 +29,6 @@ function setUpCanvas() {
     //  
     //  note: the x, y, width & height 
     //  are pixel values on the Clay County Township Map "ccmap.png"
-
-    //  Only the first two Range values are provided, we'll
-    //  need to get the values of Ranges 3 & 4. 
 
     [1, 6, 57, 123, 222, 222],
     [1,	7, 57, 343, 222, 222],
