@@ -1,5 +1,9 @@
 // draws county map image on canvas
 // shows only selected township
+// uses index.html file for user interface
+
+// it creates a Township class and uses that class to store township data
+
 // reference: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage
 
 const btn = document.getElementById("btn");
