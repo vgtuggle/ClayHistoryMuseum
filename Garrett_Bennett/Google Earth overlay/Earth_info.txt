@@ -1,0 +1,7 @@
+Inorder to get the google earthg overlay to work you have to
+
+1. Open the .KMZ file on your computer 
+(this will only work if you have earth installed)
+
+2. go to the properties of the layer in google earth and 
+	browse for the trs #4 image 
